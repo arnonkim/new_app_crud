@@ -10,25 +10,14 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tb_employee")
-public class Employee {
+@Table(name = "tb_position")
+public class Position {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
-
-    private String lastName;
+    private String name;
 
     private String status;
-
-    @ManyToOne
-    @JoinColumn(name = "position_id")
-    private Position position;
-
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
-
 }
